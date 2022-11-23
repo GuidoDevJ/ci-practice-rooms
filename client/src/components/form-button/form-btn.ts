@@ -1,4 +1,4 @@
-import "../../components/button/btn"
+import "../button/btn"
 class FormBtn extends HTMLElement{
     shadow=this.attachShadow({"mode":"open"})
     constructor(){

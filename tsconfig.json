@@ -1,8 +1,13 @@
 {
     "compilerOptions": {
-        "target":"ESNext",
+        "module": "CommonJS",
+        "target": "ESNext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        
-    }
+        "strictNullChecks": false
+    },
+    "files": [
+        "./server/index.ts",
+        "./server/db.ts"
+    ]
 }
