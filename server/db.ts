@@ -1,6 +1,6 @@
 import * as admin from "firebase-admin";
 import firebase from 'firebase/compat/app'
-import * as services from "../firebase.json"
+import * as services from "./firebase.json"
 import 'firebase/compat/database'
 import 'firebase/compat/firestore'
 

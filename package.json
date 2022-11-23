@@ -20,7 +20,7 @@
     "build:front": "parcel build ./client/src/index.html --dist-dir public",
     "build:api": "tsc",
     "build": "yarn install --ignore-engines && yarn build:front && yarn build:api",
-    "start": "node index.js"
+    "start": "node ./server/index.js"
   },
   "devDependencies": {
     "parcel": "^2.8.0",
