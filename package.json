@@ -18,7 +18,7 @@
     "dev": "npx concurrently --names \"CLIENT,API\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn dev:front\" \"yarn dev:api\"",
     "build:front": "parcel build ./src/index.html --dist-dir public",
     "build:api": "tsc",
-    "build": "yarn install --ignore-engine &&yarn build:front && yarn build:api",
+    "build": "yarn install --ignore-engines && yarn build:front && yarn build:api",
     "start": "node ./index.js"
   },
   "devDependencies": {
