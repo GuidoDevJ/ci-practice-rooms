@@ -1,6 +1,7 @@
 {
   "name": "front",
   "version": "1.0.0",
+  "type": "commonjs",
   "license": "MIT",
   "dependencies": {
     "@types/cors": "^2.8.12",
@@ -13,13 +14,13 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "dev:api": "nodemon index.ts",
-    "dev:front": "parcel serve ./src/index.html --dist-dir public",
+    "dev:api": "nodemon --watch './server/index.ts' --exec 'ts-node ./server/dev.ts'",
+    "dev:front": "parcel serve ./client/src/index.html --dist-dir public",
     "dev": "npx concurrently --names \"CLIENT,API\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn dev:front\" \"yarn dev:api\"",
-    "build:front": "parcel build ./src/index.html --dist-dir public",
+    "build:front": "parcel build ./client/src/index.html --dist-dir public",
     "build:api": "tsc",
     "build": "yarn install --ignore-engines && yarn build:front && yarn build:api",
-    "start": "node ../index.js"
+    "start": "node index.js"
   },
   "devDependencies": {
     "parcel": "^2.8.0",
