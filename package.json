@@ -1,10 +1,12 @@
 {
   "name": "front",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "commonjs",
   "license": "MIT",
   "dependencies": {
+    "@types/cors": "^2.8.12",
     "@vaadin/router": "^1.7.4",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "firebase": "^9.14.0",
     "firebase-admin": "^11.3.0",
@@ -12,15 +14,19 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "dev:api": "nodemon index.ts",
-    "dev:front": "parcel serve ./src/index.html --dist-dir public",
-    "build:front": "parcel build ./src/index.html --dist-dir public",
-    "build:api": "tsc ./index.ts",
-    "build": "yarn build:front && yarn build:api",
+    "dev:api": "nodemon ./server/index.ts",
+    "dev:front": "parcel serve ./client/src/index.html --dist-dir public",
+    "dev": "npx concurrently --names \"CLIENT,API\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn dev:front\" \"yarn dev:api\"",
+    "build:front": "parcel build ./client/src/index.html --dist-dir public",
+    "build:api": "tsc",
+    "build": "yarn install --ignore-engines && yarn build:front && yarn build:api",
     "start": "node ./server/index.js"
   },
   "devDependencies": {
     "parcel": "^2.8.0",
-    "process": "^0.11.10"
-  }
+    "process": "^0.11.10",
+    "typescript": "^4.9.3"
+  },
+  "repository": "git@github.com:GuidoDevJ/ci-practice-rooms.git",
+  "author": "Guido <[guidogauna9@gmail.com]>"
 }

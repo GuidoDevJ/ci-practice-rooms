@@ -1,5 +1,5 @@
 import * as  express from "express"
-import { bdrt,fireStore } from "./db"
+import { bdrt,fireStore } from "./db.js"
 import { nanoid } from 'nanoid'
 import * as cors from "cors"
 const app = express()
@@ -116,6 +116,11 @@ app.get("/rooms/:roomId",(req,res)=>{
         }
     })
 })
+app.use(express.static("public"));
+
+app.get("*", (req, res) => {
+	res.sendFile(__dirname+"/public/index.html");
+});
 
 app.listen(port,()=>{
     console.log("Escuchando los cambios")

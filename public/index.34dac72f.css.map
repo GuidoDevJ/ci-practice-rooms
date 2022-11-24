@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["client/src/index.css"],"sourcesContent":["*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    overflow: hidden;\r\n}"],"names":[],"version":3,"file":"index.34dac72f.css.map","sourceRoot":"/__parcel_source_root/"}
